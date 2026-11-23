@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Switzerland: descubra nove destinos suíços, roteiros, experiências, dicas de viagem e informações para planejar sua visita.">
+    <meta name="theme-color" content="#173b59">
+    <title>Explore Switzerland | Descubra a Suíça</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="cabecalho">
+        <nav class="navegacao container" aria-label="Navegação principal">
+            <a class="marca" href="#inicio" aria-label="Explore Switzerland - página inicial">
+                <span class="bandeira" aria-hidden="true">✚</span>
+                <span>Explore<br>Switzerland</span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuPrincipal">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="menu" id="menuPrincipal">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#destinos">Destinos</a></li>
+                <li><a href="#experiencias">Experiências</a></li>
+                <li><a href="#roteiro">Roteiro</a></li>
+                <li><a href="#planejamento">Planejamento</a></li>
+                <li><a class="link-contato" href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="inicio">
+            <div class="hero-sombra"></div>
+            <div class="hero-conteudo container">
+                <span class="etiqueta-hero">DESCUBRA · PLANEJE · VIVA</span>
+                <h1>Explore<br><span>Switzerland</span><span class="sinal-mais" aria-label="Suíça">✚</span></h1>
+                <p>Montanhas impressionantes, cidades encantadoras e experiências que ficam na memória. Sua próxima aventura começa aqui.</p>
+                <div class="hero-acoes">
+                    <a class="botao botao-principal" href="#destinos">Descubra os destinos <span aria-hidden="true">→</span></a>
+                    <a class="botao botao-contorno" href="#roteiro">Ver roteiro sugerido</a>
+                </div>
+                <div class="hero-nota"><span aria-hidden="true">✦</span> Um país. Quatro idiomas nacionais. Infinitas descobertas.</div>
+            </div>
+            <a class="indicador-scroll" href="#destinos" aria-label="Role para conhecer os destinos"><span></span></a>
+        </section>
+
+        <section class="secao destinos" id="destinos">
+            <div class="container">
+                <div class="cabecalho-secao">
+                    <span class="sobretitulo">NOVE LUGARES PARA SE APAIXONAR</span>
+                    <h2>Encontre seu próximo destino</h2>
+                    <p>De centros históricos a vilarejos alpinos: explore diferentes regiões da Suíça e escolha o cenário que combina com sua viagem.</p>
+                </div>
+
+                <div class="filtros-destinos" aria-label="Filtrar destinos">
+                    <button class="filtro ativo" type="button" data-filtro="todos" aria-pressed="true">Todos</button>
+                    <button class="filtro" type="button" data-filtro="cidade" aria-pressed="false">Cidades</button>
+                    <button class="filtro" type="button" data-filtro="lago" aria-pressed="false">Lagos e vilas</button>
+                    <button class="filtro" type="button" data-filtro="natureza" aria-pressed="false">Natureza</button>
+                    <button class="filtro" type="button" data-filtro="montanha" aria-pressed="false">Montanhas</button>
+                </div>
+
+                <div class="busca-destinos">
+                    <label for="buscaDestino">Procure por um destino</label>
+                    <div class="campo-busca">
+                        <span aria-hidden="true">⌕</span>
+                        <input id="buscaDestino" type="search" placeholder="Ex.: Lucerna, lagos, montanhas..." autocomplete="off">
+                        <button id="limparBusca" type="button" aria-label="Limpar busca">×</button>
+                    </div>
+                </div>
+                <p class="resultado-filtro" id="resultadoFiltro" aria-live="polite">Mostrando 9 destinos</p>
+
+                <div class="cards-destinos" id="listaDestinos">
+                    <article class="card-destino" data-nome="lucerna" data-categoria="cidade">
+                        <div class="imagem-card">
+                            <img src="assets/images/lucerna.jpg" alt="Lucerna, com ponte histórica e construções junto ao lago" loading="lazy">
+                            <span class="tag-card">Cultura e história</span>
+                        </div>
+                        <div class="conteudo-card">
+                            <div class="titulo-card"><h3>Lucerna</h3><span class="regiao-card">Região central</span></div>
+                            <p>Uma cidade charmosa às margens do Lago dos Quatro Cantões, famosa por suas pontes e construções históricas.</p>
+                            <button class="botao-link btnSaibaMais" type="button" data-destino="lucerna">Explorar destino <span aria-hidden="true">→</span></button>
+                        </div>
+                    </article>
+
+                    <article class="card-destino" data-nome="interlaken" data-categoria="natureza">
+                        <div class="imagem-card">
+                            <img src="assets/images/interlaken.jpg" alt="Paisagem verde e montanhosa na região de Interlaken" loading="lazy">
+                            <span class="tag-card">Natureza e aventura</span>
+                        </div>
+                        <div class="conteudo-card">
+                            <div class="titulo-card"><h3>Interlaken</h3><span class="regiao-card">Oberland Bernês</span></div>
+                            <p>Uma base perfeita para explorar os lagos Thun e Brienz, trilhas e paisagens dos Alpes Berneses.</p>
+                            <button class="botao-link btnSaibaMais" type="button" data-destino="interlaken">Explorar destino <span aria-hidden="true">→</span></button>
+                        </div>
+                    </article>
+
+                    <article class="card-destino" data-nome="zermatt" data-categoria="montanha">
+                        <div class="imagem-card">
+                            <img src="assets/images/zermatt.jpg" alt="Montanha Matterhorn na região de Zermatt" loading="lazy">
+                            <span class="tag-card">Montanhas e neve</span>
+                        </div>
+                        <div class="conteudo-card">
+                            <div class="titulo-card"><h3>Zermatt</h3><span class="regiao-card">Cantão de Valais</span></div>
+                            <p>Vila alpina conhecida pela vista do Matterhorn, por suas trilhas e pelas atividades de inverno.</p>
+                            <button class="botao-link btnSaibaMais" type="button" data-destino="zermatt">Explorar destino <span aria-hidden="true">→</span></button>
+                        </div>
+                    </article>
+
+                    <article class="card-destino" data-nome="berna bern" data-categoria="cidade">
+                        <div class="imagem-card">
+                            <img src="assets/images/berna.webp" alt="Centro histórico de Berna com torre do relógio e rio Aare" loading="lazy">
+                            <span class="tag-card">Patrimônio e arquitetura</span>
+                        </div>
+                        <div class="conteudo-card">
+                            <div class="titulo-card"><h3>Berna</h3><span class="regiao-card">Capital suíça</span></div>
+                            <p>Ruas medievais, arcadas, fontes históricas e a paisagem do rio Aare em uma cidade reconhecida pela UNESCO.</p>
+                            <button class="botao-link btnSaibaMais" type="button" data-destino="berna">Explorar destino <span aria-hidden="true">→</span></button>
+                        </div>
+                    </article>
+
+                    <article class="card-destino" data-nome="genebra geneva" data-categoria="cidade">
+                        <div class="imagem-card">
+                            <img src="assets/images/genebra.webp" alt="Jato de água Jet d’Eau no Lago de Genebra" loading="lazy">
+                            <span class="tag-card">Cultura internacional</span>
+                        </div>
+                        <div class="conteudo-card">
+                            <div class="titulo-card"><h3>Genebra</h3><span class="regiao-card">Suíça francófona</span></div>
+                            <p>À beira do Lago Léman, combina centro histórico, parques, museus e o famoso jato d’água Jet d’Eau.</p>
+                            <button class="botao-link btnSaibaMais" type="button" data-destino="genebra">Explorar destino <span aria-hidden="true">→</span></button>
+                        </div>
+                    </article>
+
+                    <article class="card-destino" data-nome="montreux chillon" data-categoria="lago">
+                        <div class="imagem-card">
+                            <img src="assets/images/montreux.webp" alt="Castelo de Chillon às margens do Lago de Genebra" loading="lazy">
+                            <span class="tag-card">Lago e cultura</span>
+                        </div>
+                        <div class="conteudo-card">
+                            <div class="titulo-card"><h3>Montreux</h3><span class="regiao-card">Riviera do Léman</span></div>
+                            <p>Uma elegante cidade às margens do lago, com passeio à beira d’água e o histórico Château de Chillon por perto.</p>
+                            <button class="botao-link btnSaibaMais" type="button" data-destino="montreux">Explorar destino <span aria-hidden="true">→</span></button>
+                        </div>
+                    </article>
+
+                    <article class="card-destino" data-nome="lugano" data-categoria="lago">
+                        <div class="imagem-card">
+                            <img src="assets/images/lugano.webp" alt="Lago de Lugano com palmeiras, cidade e montanhas ao fundo" loading="lazy">
+                            <span class="tag-card">Clima mediterrâneo</span>
+                        </div>
+                        <div class="conteudo-card">
+                            <div class="titulo-card"><h3>Lugano</h3><span class="regiao-card">Cantão de Ticino</span></div>
+                            <p>Uma região de influência italiana, com palmeiras, praças, passeios pelo lago e montanhas ao redor.</p>
+                            <button class="botao-link btnSaibaMais" type="button" data-destino="lugano">Explorar destino <span aria-hidden="true">→</span></button>
+                        </div>
+                    </article>
+
+                    <article class="card-destino" data-nome="lauterbrunnen" data-categoria="natureza">
+                        <div class="imagem-card">
+                            <img src="assets/images/lauterbrunnen.webp" alt="Vale de Lauterbrunnen com cachoeira, montanhas e chalés" loading="lazy">
+                            <span class="tag-card">Vales e cachoeiras</span>
+                        </div>
+                        <div class="conteudo-card">
+                            <div class="titulo-card"><h3>Lauterbrunnen</h3><span class="regiao-card">Região de Jungfrau</span></div>
+                            <p>Um vale alpino cercado por paredões rochosos, vilarejos e cachoeiras como a Staubbach.</p>
+                            <button class="botao-link btnSaibaMais" type="button" data-destino="lauterbrunnen">Explorar destino <span aria-hidden="true">→</span></button>
+                        </div>
+                    </article>
+
+                    <article class="card-destino" data-nome="grindelwald" data-categoria="montanha">
+                        <div class="imagem-card">
+                            <img src="assets/images/grindelwald.webp" alt="Vilarejo de Grindelwald diante de uma grande montanha dos Alpes" loading="lazy">
+                            <span class="tag-card">Aventura alpina</span>
+                        </div>
+                        <div class="conteudo-card">
+                            <div class="titulo-card"><h3>Grindelwald</h3><span class="regiao-card">Região de Jungfrau</span></div>
+                            <p>Um vilarejo alpino aos pés do Eiger, ponto de partida para trilhas, teleféricos e vistas panorâmicas.</p>
+                            <button class="botao-link btnSaibaMais" type="button" data-destino="grindelwald">Explorar destino <span aria-hidden="true">→</span></button>
+                        </div>
+                    </article>
+                </div>
+                <p class="sem-resultados" id="semResultados" hidden>Nenhum destino encontrado. Tente outro nome ou escolha uma categoria diferente.</p>
+                <div class="dica-galeria"><span aria-hidden="true">✦</span><p>Explore os cartões para ver mais detalhes, destaques e dicas de cada lugar.</p></div>
+            </div>
+        </section>
+
+        <section class="faixa-destaques" aria-label="Destaques da Suíça">
+            <div class="container destaques-grid">
+                <div class="destaque-item"><span aria-hidden="true">⌁</span><div><strong>Paisagens impressionantes</strong><p>Montanhas, lagos e vilarejos.</p></div></div>
+                <div class="destaque-item"><span aria-hidden="true">⌂</span><div><strong>Cultura e tradição</strong><p>História em cada detalhe.</p></div></div>
+                <div class="destaque-item"><span aria-hidden="true">◇</span><div><strong>Quatro idiomas nacionais</strong><p>Alemão, francês, italiano e romanche.</p></div></div>
+                <div class="destaque-item"><span aria-hidden="true">🚆</span><div><strong>Transporte integrado</strong><p>Trens, ônibus e barcos.</p></div></div>
+            </div>
+        </section>
+
+        <section class="secao experiencias" id="experiencias">
+            <div class="container">
+                <div class="cabecalho-secao">
+                    <span class="sobretitulo">MAIS DO QUE PAISAGENS</span>
+                    <h2>Experiências para cada estilo de viagem</h2>
+                    <p>A Suíça tem opções para quem gosta de aventura, cultura, gastronomia ou momentos tranquilos junto à natureza.</p>
+                </div>
+                <div class="experiencias-grid">
+                    <article class="experiencia-card"><span class="experiencia-icone" aria-hidden="true">🏔️</span><h3>Montanhas e trilhas</h3><p>Explore caminhos alpinos, mirantes e teleféricos em regiões como Jungfrau e Zermatt.</p></article>
+                    <article class="experiencia-card"><span class="experiencia-icone" aria-hidden="true">🚞</span><h3>Viagens panorâmicas</h3><p>Descubra paisagens de trem em rotas famosas como Bernina Express e Glacier Express.</p></article>
+                    <article class="experiencia-card"><span class="experiencia-icone" aria-hidden="true">🧀</span><h3>Sabores suíços</h3><p>Experimente fondue, raclette, rösti e chocolates, além de especialidades de cada região.</p></article>
+                    <article class="experiencia-card"><span class="experiencia-icone" aria-hidden="true">🏛️</span><h3>Cidades históricas</h3><p>Caminhe por centros medievais, visite museus e conheça a diversidade cultural do país.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="secao roteiro" id="roteiro">
+            <div class="container">
+                <div class="cabecalho-secao">
+                    <span class="sobretitulo">UMA IDEIA PARA COMEÇAR</span>
+                    <h2>Roteiro sugerido de 7 dias</h2>
+                    <p>Uma proposta de viagem que combina cidades, lagos e paisagens alpinas. Adapte a ordem e o tempo em cada parada conforme seu ritmo.</p>
+                </div>
+
+                <div class="linha-roteiro">
+                    <article class="dia-roteiro"><span class="numero-dia">01</span><div><h3>Zurique</h3><p>Comece pelo centro histórico, caminhe às margens do rio Limmat e conheça a região do lago.</p></div></article>
+                    <article class="dia-roteiro"><span class="numero-dia">02</span><div><h3>Lucerna</h3><p>Visite a Ponte da Capela, explore as ruas antigas e reserve um tempo para apreciar o lago.</p></div></article>
+                    <article class="dia-roteiro"><span class="numero-dia">03</span><div><h3>Interlaken</h3><p>Conheça a cidade entre os lagos Thun e Brienz e aproveite a paisagem dos Alpes Berneses.</p></div></article>
+                    <article class="dia-roteiro"><span class="numero-dia">04</span><div><h3>Lauterbrunnen</h3><p>Explore o vale, observe as cachoeiras e conheça os pequenos vilarejos da região de Jungfrau.</p></div></article>
+                    <article class="dia-roteiro"><span class="numero-dia">05</span><div><h3>Grindelwald</h3><p>Reserve o dia para mirantes, trilhas e experiências nas montanhas, conforme a estação.</p></div></article>
+                    <article class="dia-roteiro"><span class="numero-dia">06</span><div><h3>Zermatt</h3><p>Conheça a vila alpina e procure os melhores pontos para admirar o Matterhorn.</p></div></article>
+                    <article class="dia-roteiro"><span class="numero-dia">07</span><div><h3>Retorno e despedida</h3><p>Organize o deslocamento até a cidade de partida ou estenda a viagem para conhecer Genebra e Montreux.</p></div></article>
+                </div>
+                <div class="roteiro-nota"><strong>Importante:</strong> este é um roteiro inspiracional, não um cronograma com conexões garantidas. Confira a duração dos trajetos, os horários e eventuais reservas antes de fechar a viagem.</div>
+                <a class="botao botao-outline-azul" href="https://www.sbb.ch/en" target="_blank" rel="noopener noreferrer">Consultar trens na SBB <span aria-hidden="true">↗</span></a>
+            </div>
+        </section>
+
+        <section class="secao temporadas">
+            <div class="container">
+                <div class="cabecalho-secao">
+                    <span class="sobretitulo">ESCOLHA A SUA ESTAÇÃO</span>
+                    <h2>Quando visitar a Suíça?</h2>
+                    <p>Cada época transforma a paisagem e muda o tipo de experiência que você pode priorizar.</p>
+                </div>
+                <div class="temporadas-grid">
+                    <article class="temporada-card primavera"><span>🌷</span><h3>Primavera</h3><p>Flores, parques e cidades ganhando cores depois do inverno.</p></article>
+                    <article class="temporada-card verao"><span>☀️</span><h3>Verão</h3><p>Boa época para trilhas, lagos, passeios de barco e atividades ao ar livre.</p></article>
+                    <article class="temporada-card outono"><span>🍂</span><h3>Outono</h3><p>Vilas e vinhedos com tons dourados, além de temperaturas mais amenas.</p></article>
+                    <article class="temporada-card inverno"><span>❄️</span><h3>Inverno</h3><p>Neve, esportes de inverno, mercados sazonais e cenários alpinos.</p></article>
+                </div>
+                <p class="nota-temporada">O clima pode variar bastante entre cidades, vales e áreas de montanha. Confira a previsão local e as condições das trilhas e dos teleféricos antes de sair.</p>
+            </div>
+        </section>
+
+        <section class="secao planejamento" id="planejamento">
+            <div class="container">
+                <div class="cabecalho-secao">
+                    <span class="sobretitulo">ANTES DE FAZER AS MALAS</span>
+                    <h2>Planeje sua viagem</h2>
+                    <p>Algumas informações práticas ajudam a organizar o orçamento, os deslocamentos e as escolhas do roteiro.</p>
+                </div>
+
+                <div class="planejamento-grid">
+                    <article class="planejamento-card"><span class="planejamento-icone" aria-hidden="true">💰</span><h3>Moeda</h3><p>A moeda oficial é o franco suíço (CHF). Confira a cotação e as tarifas antes de trocar dinheiro ou usar o cartão.</p></article>
+                    <article class="planejamento-card"><span class="planejamento-icone" aria-hidden="true">🗣️</span><h3>Idiomas</h3><p>A Suíça tem quatro idiomas nacionais: alemão, francês, italiano e romanche. O idioma predominante muda conforme a região.</p></article>
+                    <article class="planejamento-card"><span class="planejamento-icone" aria-hidden="true">🚆</span><h3>Transporte</h3><p>Trens, ônibus e barcos conectam muitas cidades e destinos. Compare bilhetes individuais e passes conforme seu roteiro.</p></article>
+                    <article class="planejamento-card"><span class="planejamento-icone" aria-hidden="true">🧳</span><h3>Hospedagem</h3><p>Compare localização, acesso ao transporte e política de cancelamento. Em épocas concorridas, reservar cedo pode ajudar.</p></article>
+                </div>
+
+                <div class="links-uteis">
+                    <div><span class="sobretitulo">LINKS OFICIAIS</span><h3>Confira informações atualizadas</h3><p>Use os sites oficiais para verificar atrações, horários, bilhetes, condições e novidades antes da viagem.</p></div>
+                    <div class="links-uteis-botoes">
+                        <a href="https://www.myswitzerland.com/pt/" target="_blank" rel="noopener noreferrer">Suíça Turismo <span aria-hidden="true">↗</span></a>
+                        <a href="https://www.sbb.ch/en" target="_blank" rel="noopener noreferrer">Horários e bilhetes SBB <span aria-hidden="true">↗</span></a>
+                        <a href="https://www.myswitzerland.com/en-us/planning/transport-accommodation/tickets-public-transportation/swiss-travel-pass/" target="_blank" rel="noopener noreferrer">Swiss Travel Pass <span aria-hidden="true">↗</span></a>
+                    </div>
+                </div>
+
+                <p class="aviso-custos">Os custos de alimentação, hospedagem e atrações variam conforme a cidade, a temporada e o estilo de viagem. Consulte os valores atuais diretamente com os estabelecimentos e fornecedores; este site não apresenta cotações em tempo real.</p>
+            </div>
+        </section>
+
+        <section class="secao sobre" id="sobre">
+            <div class="container sobre-conteudo">
+                <div>
+                    <span class="sobretitulo">SOBRE O DESTINO</span>
+                    <h2>Um país pequeno, cheio de contrastes</h2>
+                </div>
+                <div>
+                    <p>A Suíça reúne cidades históricas, lagos, vales, montanhas e diferentes tradições culturais. Em uma mesma viagem, é possível conhecer regiões de língua alemã, francesa e italiana, cada uma com características próprias.</p>
+                    <p>O Explore Switzerland é um guia introdutório criado para reunir inspirações, destinos e dicas práticas para quem deseja começar a planejar uma viagem pelo país.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq secao">
+            <div class="container faq-conteudo">
+                <div class="cabecalho-secao">
+                    <span class="sobretitulo">DÚVIDAS FREQUENTES</span>
+                    <h2>Antes de embarcar</h2>
+                </div>
+                <div class="faq-lista">
+                    <details><summary>Qual é a moeda utilizada na Suíça?</summary><p>A moeda é o franco suíço (CHF). Em áreas turísticas, alguns estabelecimentos podem aceitar euros, mas o troco pode ser dado em francos suíços; confirme as condições antes de pagar.</p></details>
+                    <details><summary>Preciso comprar um passe de transporte?</summary><p>Não necessariamente. Compare o custo dos trajetos individuais com passes como o Swiss Travel Pass. A melhor opção depende das cidades visitadas, da quantidade de deslocamentos e das excursões planejadas.</p></details>
+                    <details><summary>É possível conhecer várias regiões de trem?</summary><p>Sim. A rede de transporte público conecta diversas cidades e áreas turísticas. Consulte os horários e as conexões no site oficial da SBB antes de definir os deslocamentos.</p></details>
+                    <details><summary>Qual é a melhor época para viajar?</summary><p>Depende do que você deseja fazer. O verão costuma favorecer passeios ao ar livre e o inverno é procurado por quem quer neve e esportes de inverno; primavera e outono também oferecem experiências diferentes.</p></details>
+                </div>
+            </div>
+        </section>
+
+        <section class="contato" id="contato">
+            <div class="container contato-conteudo">
+                <div><span class="sobretitulo">SUA PRÓXIMA AVENTURA COMEÇA AQUI</span><h2>Pronto para explorar a Suíça?</h2><p>Tem dúvidas ou sugestões sobre o projeto? Envie uma mensagem.</p></div>
+                <a class="botao botao-claro" href="mailto:?subject=Explore%20Switzerland%20-%20Contato">Enviar e-mail <span aria-hidden="true">→</span></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="container rodape-conteudo">
+            <a class="marca marca-rodape" href="#inicio"><span class="bandeira" aria-hidden="true">✚</span><span>Explore<br>Switzerland</span></a>
+            <p>Explore Switzerland · Projeto pessoal de desenvolvimento web.</p>
+            <a href="#inicio" class="voltar-topo">Voltar ao topo ↑</a>
+        </div>
+        <div class="container copyright">© <span id="anoAtual"></span> Explore Switzerland. Conteúdo para fins informativos.</div>
+    </footer>
+
+    <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitulo">
+        <div class="modal-conteudo">
+            <button class="fechar-modal" id="fecharModal" type="button" aria-label="Fechar janela">&times;</button>
+            <span class="sobretitulo">DESCUBRA ESTE DESTINO</span>
+            <h2 id="modalTitulo"></h2>
+            <p id="modalTexto"></p>
+            <div class="modal-destaques"><strong>O que vale conhecer</strong><p id="modalDestaques"></p></div>
+            <div class="modal-melhor-epoca"><strong>Para combinar com sua viagem</strong><p id="modalEpoca"></p></div>
+        </div>
+    </div>
+</body>
+</html>
